@@ -17,11 +17,11 @@ mongoose
 
 app.use(express.json());
 
-app.get("/api/characters/getCharacters", CharactersController.retrieve);
-app.get("/api/characters/getCharacter/:id", CharactersController.retrieveById);
-app.post("/api/characters/createCharacter", CharactersController.create);
-app.patch("/api/characters/updateCharacter/:id", CharactersController.update);
-app.delete("/api/characters/deleteCharacter/:id", CharactersController.delete);
+app.get("/api/characters", CharactersController.retrieve); //Get all characters.
+app.get("/api/characters/:id", CharactersController.retrieveById); //Get a character by his id.
+app.post("/api/characters", CharactersController.create); //Create a new character.
+app.patch("/api/characters/:id", CharactersController.update); //Update a character by his id.
+app.delete("/api/characters/:id", CharactersController.delete); //Delete a character by his id.
 
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}!`);

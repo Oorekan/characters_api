@@ -1,6 +1,7 @@
 const CharacterModel = require("../models/Character");
 
 module.exports = {
+  //Get all characters.
   retrieve: async (req, res) => {
     try {
       const getCharacters = await CharacterModel.find({});
@@ -11,6 +12,7 @@ module.exports = {
       res.json({ success: false, error: err });
     }
   },
+  //Get a character by his id.
   retrieveById: async (req, res) => {
     try {
       const getCharacterById = await CharacterModel.findById({
@@ -23,6 +25,7 @@ module.exports = {
       res.json({ success: false, error: err });
     }
   },
+  //Create a new character.
   create: async (req, res) => {
     try {
       const createCharacter = await new CharacterModel({
@@ -42,6 +45,7 @@ module.exports = {
       res.json({ success: false, error: err });
     }
   },
+  //Update a character by his id.
   update: async (req, res) => {
     try {
       const updateOperation = await CharacterModel.updateOne(
@@ -61,9 +65,10 @@ module.exports = {
       res.json({ success: false, error: err });
     }
   },
+  //Delete a character by his id.
   delete: async (req, res) => {
     try {
-      const getDeletedCharacter = await CharacterModel.findById({
+      const getCharacterInfo = await CharacterModel.findById({
         _id: req.params.id,
       });
       const deleteOperation = await CharacterModel.deleteOne({
@@ -74,7 +79,7 @@ module.exports = {
           success: false,
           message: "A character with such an ID does not exist!",
         });
-      res.json({ success: true, result: getDeletedCharacter });
+      res.json({ success: true, result: getCharacterInfo });
     } catch (err) {
       res.json({ success: false, error: err });
     }

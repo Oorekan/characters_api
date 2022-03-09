@@ -1,10 +1,13 @@
-GET http://localhost:4000/api/characters/getCharacters
+//Get all characters.
+GET http://localhost:4000/api/characters/
 
 ###
-GET http://localhost:4000/api/characters/getCharacter/6227792a93675f2014aacd85
+//Get a character by his id.
+GET http://localhost:4000/api/characters/6227792a93675f2014aacd85
 
 ###
-POST http://localhost:4000/api/characters/createCharacter
+//Create a new character.
+POST http://localhost:4000/api/characters/
 Content-Type: application/json
 
 {
@@ -33,7 +36,8 @@ Content-Type: application/json
     ]
 }
 ###
-PATCH http://localhost:4000/api/characters/updateCharacter/62278c4b809a131ae59413cd
+//Update a character by his id.
+PATCH http://localhost:4000/api/characters/62286f34fe5da79c38c050b9
 Content-Type: application/json
 
 {
@@ -41,4 +45,5 @@ Content-Type: application/json
     "age": 21
 }
 ###
-DELETE http://localhost:4000/api/characters/deleteCharacter/62278c4b809a131ae59413cd
+//Delete a character by his id.
+DELETE http://localhost:4000/api/characters/62286f34fe5da79c38c050b9
