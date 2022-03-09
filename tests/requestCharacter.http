@@ -1,0 +1,44 @@
+GET http://localhost:4000/api/characters/getCharacters
+
+###
+GET http://localhost:4000/api/characters/getCharacter/6227792a93675f2014aacd85
+
+###
+POST http://localhost:4000/api/characters/createCharacter
+Content-Type: application/json
+
+{
+    "name": "Jojo",
+    "race": "Human",
+    "gender": "Male",
+    "age": 28,
+    "hp": 500,
+    "mana": 1000,
+    "level": 10,
+    "class": "Warrior",
+    "skills": 
+    [
+        {
+            "name": "Berserk", 
+            "effectDuration": 60, 
+            "manaCost": 10, 
+            "cooldown": 300
+        },
+        {
+            "name": "Berserker Armor", 
+            "effectDuration": 120, 
+            "manaCost": 100, 
+            "cooldown": 240
+        }
+    ]
+}
+###
+PATCH http://localhost:4000/api/characters/updateCharacter/62278c4b809a131ae59413cd
+Content-Type: application/json
+
+{
+    "name": "Alice",
+    "age": 21
+}
+###
+DELETE http://localhost:4000/api/characters/deleteCharacter/62278c4b809a131ae59413cd
